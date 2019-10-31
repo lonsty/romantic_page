@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -7,16 +8,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>恋爱计时器</title>
+    <title>Where Are You</title>
     <style>
+		body, html {
+			height: 100%
+		}
+
         body {
             -webkit-font-smoothing: antialiased;
             font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background-image: url("u.jpg");
-            font-size: 85%;
+            font-size: 100%;
             margin: 0;
         }
         
+		@keyframes breath {
+			0% { background-size: 100% auto; }
+			50% { background-size: 150% auto; }
+			100% { background-size: 100% auto; }
+		}
+
+		.bg {
+			height: 100%;
+			transform: translate3d(0, 0, 0);
+			animation: breath 15s ease infinite;
+			background: url("C:/Users/Allen/Pictures/wallpaper/Pixabay/u.jpg") center center no-repeat;
+		}
+
         h2 {
             font-size: 220%;
             font-weight: 400;
@@ -45,26 +62,27 @@
         .footer {
             position: absolute;
 	        width: 100%;
-	        bottom: 5%;
+	        bottom: 3%;
 	        transform: translate(0, -50%);
 	        text-align: center;
-	        font-size: 120%;
 	        color: #888888
         }
     </style>
 </head>
 
 <body>
-    <div class="content">
-        <h2>我们已经在一起了</h2>
-        <div class="timer">
-            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
-        </div>
-    </div>
+	<div class="bg">
+	    <div class="content">
+	        <h2>We have been together for</h2>
+	        <div class="timer">
+	            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+	        </div>
+	    </div>
 
-    <div class="footer">
-    	THIS IS FAKE
-    </div>
+	    <div class="footer">
+	    	THIS IS FAKE
+	    </div>
+	</div>
 
     <script>
         function timer() {
